@@ -5,9 +5,11 @@ import { getCustomers } from "../redux/actions/customerAction";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../redux/actions/productAction";
 import { addNewTransaction } from "../redux/actions/transactionAction";
+import { useNavigate } from "react-router-dom";
 
 const AddTransaction = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { products } = useSelector((store) => store.products);
   const { customers } = useSelector((store) => store.customers);
 

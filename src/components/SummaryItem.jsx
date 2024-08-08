@@ -1,4 +1,5 @@
 import { Chip } from "@nextui-org/react";
+import PropTypes from "prop-types";
 
 const SummaryItem = ({ data, color, title, icon }) => {
   const isPlural = data?.length > 1;
@@ -17,6 +18,13 @@ const SummaryItem = ({ data, color, title, icon }) => {
       </div>
     </Chip>
   );
+};
+
+SummaryItem.propTypes = {
+  data: PropTypes.array,
+  color: PropTypes.string,
+  title: PropTypes.string,
+  icon: PropTypes.string,
 };
 
 export default SummaryItem;

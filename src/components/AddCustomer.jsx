@@ -21,15 +21,13 @@ const AddCustomer = () => {
 
   const validatePhoneNumber =
     form.phoneNumber === "" || isNaN(form.phoneNumber);
-  const isDisabled =
-    form.name === "" || validatePhoneNumber || form.address === "";
 
   const handleSubmit = () => {
     addNewCustomer(form, dispatch);
   };
 
   return (
-    <AddDataLayout handleSubmit={handleSubmit} >
+    <AddDataLayout handleSubmit={handleSubmit}>
       <Input
         name="name"
         label="Name"

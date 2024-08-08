@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 export const ContentLayout = ({ children, id }) => {
   const { isDeleteProduct, isAddProduct } = useSelector(
@@ -36,4 +37,9 @@ export const ContentLayout = ({ children, id }) => {
       </main>
     </>
   );
+};
+
+ContentLayout.propTypes = {
+  children: PropTypes.node,
+  id: PropTypes.string,
 };

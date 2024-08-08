@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
@@ -6,6 +7,10 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/login" />;
   }
   return children || <Outlet />;
+};
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node,
 };
 
 export default ProtectedRoute;

@@ -23,7 +23,7 @@ export const getDetailTransaction = async (id, dispatch, navigate) => {
   }
 };
 
-export const addNewTransaction = async (form, dispatch) => {
+export const addNewTransaction = async (form, dispatch, navigate) => {
   try {
     const fetch = await postApi("/bills", form, getAuthHeader());
     toast.success("Transaction Added Successfully");

@@ -25,7 +25,7 @@ export const getDetailProduct = async (id, dispatch, navigate) => {
   }
 };
 
-export const deleteProduct = async (id) => {
+export const deleteProduct = async (id, navigate) => {
   try {
     const fetch = await deleteApi(`/products/${id}`);
     toast.success("Product Deleted Successfully");
@@ -35,7 +35,7 @@ export const deleteProduct = async (id) => {
   }
 };
 
-export const addNewProduct = async (form, dispatch) => {
+export const addNewProduct = async (form, dispatch, navigate) => {
   try {
     const fetch = await postApi("/products", form, getAuthHeader());
     toast.success("Product Added Successfully");

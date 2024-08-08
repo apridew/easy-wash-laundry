@@ -1,5 +1,6 @@
 import { Card } from "@nextui-org/react";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const CardLayout = ({ children }) => {
   const path = useLocation().pathname;
@@ -16,5 +17,7 @@ const CardLayout = ({ children }) => {
     </Card>
   );
 };
-
+CardLayout.propTypes = {
+  children: PropTypes.node,
+};
 export default CardLayout;

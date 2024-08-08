@@ -3,7 +3,6 @@ import { Input } from "@nextui-org/react";
 import { useState } from "react";
 import { addNewProduct } from "../redux/actions/productAction";
 import { useDispatch } from "react-redux";
-import GroupButtonSubmit from "./GroupButtonSubmit";
 
 const AddProduct = () => {
   const dispatch = useDispatch();

@@ -1,5 +1,6 @@
 import { Button, Divider } from "@nextui-org/react";
 import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const NavLinkItem = ({ title, icon, href }) => {
   const isLogout = title === "Sign Out";
@@ -21,21 +22,26 @@ const NavLinkItem = ({ title, icon, href }) => {
         ${isLogout ? "text-red-500" : isActive || "text-slate-500"}`}
       ></i>
 
-
       <Button
         color={isLogout ? "danger" : "primary"}
         variant="light"
         className={`w-full mb-2 uppercase text-xs sm:left-36 p-0 group-hover:left-0 font-semibold disabled:opacity-80
           ${isActive ? "text-slate-500" : ""}`}
-          radius="none"
-          onClick={handleLogout}
-          isDisabled={true}
-          >
+        radius="none"
+        onClick={handleLogout}
+        isDisabled={true}
+      >
         {title}
       </Button>
-        <Divider className="mb-0 sm:mb-4"/>
+      <Divider className="mb-0 sm:mb-4" />
     </Link>
   );
+};
+
+NavLinkItem.propTypes = {
+  title: PropTypes.string,
+  icon: PropTypes.string,
+  href: PropTypes.string,
 };
 
 export default NavLinkItem;

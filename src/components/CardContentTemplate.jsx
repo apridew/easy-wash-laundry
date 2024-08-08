@@ -1,6 +1,7 @@
 import { CardBody, Chip, Tooltip } from "@nextui-org/react";
 import { sliceId } from "../lib/helpers";
 import GroupButtonAction from "./GroupButtonAction";
+import PropTypes from "prop-types";
 const CardContentTemplate = ({
   id,
   name,
@@ -38,6 +39,17 @@ const CardContentTemplate = ({
       </CardBody>
     </div>
   );
+};
+CardContentTemplate.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  date: PropTypes.string,
+  price: PropTypes.string,
+  phone: PropTypes.string,
+  address: PropTypes.string,
+  showButtonDetail: PropTypes.bool,
+  showButtonDelete: PropTypes.bool,
+  showButtonEdit: PropTypes.bool,
 };
 
 export default CardContentTemplate;

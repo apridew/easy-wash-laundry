@@ -1,7 +1,7 @@
 import { Button, Tooltip } from "@nextui-org/react";
-import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const ButtonAction = ({ color, icon, desc, onCLick, id }) => {
+const ButtonAction = ({ color, icon, desc, onCLick }) => {
   return (
     <Tooltip content={desc}>
       <Button
@@ -15,6 +15,13 @@ const ButtonAction = ({ color, icon, desc, onCLick, id }) => {
       </Button>
     </Tooltip>
   );
+};
+
+ButtonAction.propTypes = {
+  color: PropTypes.string,
+  icon: PropTypes.string,
+  desc: PropTypes.string,
+  onCLick: PropTypes.func,
 };
 
 export default ButtonAction;

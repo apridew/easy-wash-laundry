@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const ButtonAdd = ({ title }) => {
   const dispatch = useDispatch();
@@ -28,6 +29,10 @@ const ButtonAdd = ({ title }) => {
       <p className="pe-2 md:text-medium text-xs">{title}</p>
     </Button>
   );
+};
+
+ButtonAdd.propTypes = {
+  title: PropTypes.string,
 };
 
 export default ButtonAdd;

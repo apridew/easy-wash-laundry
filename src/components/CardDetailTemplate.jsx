@@ -1,6 +1,7 @@
 import { CardBody, Chip, Divider, Tooltip } from "@nextui-org/react";
 import { sliceId } from "../lib/helpers";
 import GroupButtonAction from "./GroupButtonAction";
+import PropTypes from "prop-types";
 const CardDetailTemplate = ({
   id,
   name,
@@ -41,19 +42,35 @@ const CardDetailTemplate = ({
           <Divider className="mt-8 lg:hidden block" />
         </div>
         <div className="mt-12 lg:mt-0">
-          {showAction &&
-          
-          <GroupButtonAction
-            showButtonDetail={showButtonDetail}
-            showButtonDelete={showButtonDelete}
-            showButtonEdit={showButtonEdit}
-            id={id}
-          />
-          }
+          {showAction && (
+            <GroupButtonAction
+              showButtonDetail={showButtonDetail}
+              showButtonDelete={showButtonDelete}
+              showButtonEdit={showButtonEdit}
+              id={id}
+            />
+          )}
         </div>
       </CardBody>
     </div>
   );
+};
+
+CardDetailTemplate.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  date: PropTypes.string,
+  price: PropTypes.string,
+  phone: PropTypes.string,
+  address: PropTypes.string,
+  user: PropTypes.string,
+  qty: PropTypes.number,
+  total: PropTypes.string,
+  packageLaundry: PropTypes.string,
+  showButtonDetail: PropTypes.bool,
+  showButtonDelete: PropTypes.bool,
+  showButtonEdit: PropTypes.bool,
+  showAction: PropTypes.bool,
 };
 
 export default CardDetailTemplate;

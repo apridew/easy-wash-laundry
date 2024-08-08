@@ -2,6 +2,7 @@ import ButtonAction from "./ButtonAction";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { TYPES } from "../redux/type";
+import PropTypes from "prop-types";
 
 const GroupButtonAction = ({
   showButtonDetail,
@@ -44,12 +45,12 @@ const GroupButtonAction = ({
         />
       )}
       {showButtonEdit && (
-          <ButtonAction
-            color={"primary"}
-            icon={"bi bi-pencil-square"}
-            desc={"Edit"}
-            onCLick={() => handleEdit(id)}
-          />
+        <ButtonAction
+          color={"primary"}
+          icon={"bi bi-pencil-square"}
+          desc={"Edit"}
+          onCLick={() => handleEdit(id)}
+        />
       )}
       {showButtonDelete && (
         <ButtonAction
@@ -62,6 +63,13 @@ const GroupButtonAction = ({
       )}
     </div>
   );
+};
+
+GroupButtonAction.propTypes = {
+  showButtonDetail: PropTypes.bool,
+  showButtonEdit: PropTypes.bool,
+  showButtonDelete: PropTypes.bool,
+  id: PropTypes.string,
 };
 
 export default GroupButtonAction;

@@ -25,7 +25,7 @@ export const getDetailCustomer = async (id, dispatch, navigate) => {
   }
 };
 
-export const deleteCustomer = async (id) => {
+export const deleteCustomer = async (id, navigate) => {
   try {
     const fetch = await deleteApi(`/customers/${id}`);
     toast.success("Customer Deleted Successfully");
@@ -35,7 +35,7 @@ export const deleteCustomer = async (id) => {
   }
 };
 
-export const addNewCustomer = async (form, dispatch) => {
+export const addNewCustomer = async (form, dispatch, navigate) => {
   try {
     const fetch = await postApi("/customers", form, getAuthHeader());
     toast.success("Customer Added Successfully");
