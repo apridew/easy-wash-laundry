@@ -14,17 +14,16 @@ const AddTransaction = () => {
   const { customers } = useSelector((store) => store.customers);
 
   useEffect(() => {
+    const fetchWhenNoData = async () => {
+      if (!products?.length) {
+        await getProducts("/products", dispatch, navigate);
+      }
+      if (!customers?.length) {
+        await getCustomers("/customers", dispatch, navigate);
+      }
+    };
     fetchWhenNoData();
-  }, []);
-
-  const fetchWhenNoData = async () => {
-    if (!products?.length) {
-      await getProducts("/products", dispatch, navigate);
-    }
-    if (!customers?.length) {
-      await getCustomers("/customers", dispatch, navigate);
-    }
-  };
+  }, [dispatch, navigate, products?.length, customers?.length]);
 
   const [form, setForm] = useState({
     name: "",

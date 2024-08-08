@@ -64,7 +64,7 @@ CardDetailTemplate.propTypes = {
   phone: PropTypes.string,
   address: PropTypes.string,
   user: PropTypes.string,
-  qty: PropTypes.number,
+  qty: PropTypes.string,
   total: PropTypes.string,
   packageLaundry: PropTypes.string,
   showButtonDetail: PropTypes.bool,

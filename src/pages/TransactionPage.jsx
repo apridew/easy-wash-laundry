@@ -19,14 +19,14 @@ const TransactionPage = () => {
 
   useEffect(() => {
     dispatch({ type: TYPES.SET_ISLOADING, payload: true });
-    fetchWhenNoData();
-  }, [transactions]);
+    const fetchWhenNoData = async () => {
+      !transactions?.length &&
+        (await getTransactions("/bills", dispatch, navigate));
+      dispatch({ type: TYPES.SET_ISLOADING, payload: false });
+    };
 
-  const fetchWhenNoData = async () => {
-    !transactions?.length &&
-      (await getTransactions("/bills", dispatch, navigate));
-    dispatch({ type: TYPES.SET_ISLOADING, payload: false });
-  };
+    fetchWhenNoData();
+  }, [transactions, dispatch, navigate]);
 
   return (
     <ContentLayout id={"transaction"}>

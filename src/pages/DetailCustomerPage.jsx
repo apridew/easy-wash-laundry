@@ -19,7 +19,7 @@ const DetailCustomerPage = () => {
 
   useEffect(() => {
     getDetailCustomer(param.id, dispatch, navigate);
-  }, []);
+  }, [param.id, dispatch, navigate]);
 
   const showDate = formatDate(customer?.createdAt);
   const phoneNumber = `Phone : ${customer?.phoneNumber}`;

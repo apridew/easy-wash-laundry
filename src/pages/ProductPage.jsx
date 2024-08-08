@@ -18,13 +18,12 @@ const ProductPage = () => {
 
   useEffect(() => {
     dispatch({ type: TYPES.SET_ISLOADING, payload: true });
+    const fetchWhenNoData = async () => {
+      !products?.length && (await getProducts("/products", dispatch, navigate));
+      dispatch({ type: TYPES.SET_ISLOADING, payload: false });
+    };
     fetchWhenNoData();
-  }, [products]);
-
-  const fetchWhenNoData = async () => {
-    !products?.length && (await getProducts("/products", dispatch, navigate));
-    dispatch({ type: TYPES.SET_ISLOADING, payload: false });
-  };
+  }, [products, dispatch, navigate]);
 
   const isAllowToAddProduct = getUsername() === "admin";
 

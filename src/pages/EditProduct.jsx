@@ -24,14 +24,13 @@ const EditProduct = () => {
 
   useEffect(() => {
     dispatch({ type: TYPES.SET_ISLOADING, payload: true });
+    const fetchDetailProduct = async () => {
+      const fetch = await getDetailProduct(param.id, dispatch, navigate);
+      setForm(fetch);
+      dispatch({ type: TYPES.SET_ISLOADING, payload: false });
+    };
     fetchDetailProduct();
-  }, []);
-
-  const fetchDetailProduct = async () => {
-    const fetch = await getDetailProduct(param.id, dispatch, navigate);
-    setForm(fetch);
-    dispatch({ type: TYPES.SET_ISLOADING, payload: false });
-  };
+  }, [dispatch, navigate, param.id]);
 
   const formattedForm = {
     ...form,

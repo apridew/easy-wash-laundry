@@ -19,7 +19,7 @@ const DetailTransactionPage = () => {
 
   useEffect(() => {
     getDetailTransaction(param.id, dispatch, navigate);
-  }, []);
+  }, [param.id, dispatch, navigate]);
 
   const billDetails = transaction?.billDetails[0];
   const showDateTransaction = formatDate(transaction?.billDate);

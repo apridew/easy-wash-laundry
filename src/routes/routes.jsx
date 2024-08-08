@@ -10,7 +10,14 @@ import DetailCustomerPage from "../pages/DetailCustomerPage";
 import DetailTransactionPage from "../pages/DetailTransactionPage";
 import EditProduct from "../pages/EditProduct";
 import EditCustomer from "../pages/EditCustomer";
-import { protectedRoutehelpers } from "../hoc/ProtectedRoute";
+import ProtectedRoute from "../hoc/ProtectedRoute";
+
+const protectedRoutehelpers = (path, elementPage) => {
+  return {
+    path: path,
+    element: <ProtectedRoute>{elementPage}</ProtectedRoute>,
+  };
+};
 
 const routesToProtect = [
   { path: "/", element: <DashboardPage /> },

@@ -21,21 +21,20 @@ const DashboardPage = () => {
 
   useEffect(() => {
     dispatch({ type: TYPES.SET_ISLOADING, payload: true });
+    const fetchWhenNoData = async () => {
+      if (!products?.length) {
+        await getProducts("/products", dispatch, navigate);
+      }
+      if (!customers?.length) {
+        await getCustomers("/customers", dispatch, navigate);
+      }
+      if (!transactions?.length) {
+        await getTransactions("/bills", dispatch, navigate);
+      }
+      dispatch({ type: TYPES.SET_ISLOADING, payload: false });
+    };
     fetchWhenNoData();
-  }, [products, customers, transactions]);
-
-  const fetchWhenNoData = async () => {
-    if (!products?.length) {
-      await getProducts("/products", dispatch, navigate);
-    }
-    if (!customers?.length) {
-      await getCustomers("/customers", dispatch, navigate);
-    }
-    if (!transactions?.length) {
-      await getTransactions("/bills", dispatch, navigate);
-    }
-    dispatch({ type: TYPES.SET_ISLOADING, payload: false });
-  };
+  }, [products, customers, transactions, dispatch, navigate]);
 
   return (
     <ContentLayout id={"dashboard"}>
@@ -59,7 +58,7 @@ const DashboardPage = () => {
               />
             </div>
           </div>
-              <SummaryDashboard />
+          <SummaryDashboard />
         </>
       )}
     </ContentLayout>

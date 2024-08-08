@@ -27,14 +27,13 @@ const EditCustomer = () => {
 
   useEffect(() => {
     dispatch({ type: TYPES.SET_ISLOADING, payload: true });
+    const fetchDetailCustomer = async () => {
+      const fetch = await getDetailCustomer(param.id, dispatch, navigate);
+      setForm(fetch);
+      dispatch({ type: TYPES.SET_ISLOADING, payload: false });
+    };
     fetchDetailCustomer();
-  }, []);
-
-  const fetchDetailCustomer = async () => {
-    const fetch = await getDetailCustomer(param.id, dispatch, navigate);
-    setForm(fetch);
-    dispatch({ type: TYPES.SET_ISLOADING, payload: false });
-  };
+  }, [dispatch, navigate, param.id]);
 
   const handleForm = (e) => {
     setForm({

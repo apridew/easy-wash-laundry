@@ -18,14 +18,13 @@ const CustomerPage = () => {
 
   useEffect(() => {
     dispatch({ type: TYPES.SET_ISLOADING, payload: true });
+    const fetchWhenNoData = async () => {
+      !customers?.length &&
+        (await getCustomers("/customers", dispatch, navigate));
+      dispatch({ type: TYPES.SET_ISLOADING, payload: false });
+    };
     fetchWhenNoData();
-  }, [customers]);
-
-  const fetchWhenNoData = async () => {
-    !customers?.length &&
-      (await getCustomers("/customers", dispatch, navigate));
-    dispatch({ type: TYPES.SET_ISLOADING, payload: false });
-  };
+  }, [customers, dispatch, navigate]);
 
   return (
     <ContentLayout id={"customer"}>

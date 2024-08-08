@@ -19,7 +19,7 @@ const DetailProductPage = () => {
 
   useEffect(() => {
     getDetailProduct(param.id, dispatch, navigate);
-  }, []);
+  }, [param.id, dispatch, navigate]);
 
   const showPrice = formatToRupiah(product?.price);
   const showDate = formatDate(product?.createdAt);

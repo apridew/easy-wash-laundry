@@ -14,10 +14,3 @@ ProtectedRoute.propTypes = {
 };
 
 export default ProtectedRoute;
-
-export const protectedRoutehelpers = (path, elementPage) => {
-  return {
-    path: path,
-    element: <ProtectedRoute>{elementPage}</ProtectedRoute>,
-  };
-};
