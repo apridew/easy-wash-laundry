@@ -5,16 +5,17 @@ import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/react";
 import { getUsername } from "../../lib/helpers";
 
 const Navbar = () => {
+  const username = getUsername();
   return (
     <div className="flex justify-between items-center p-5 border-b-1 border-slate-300 bg-slate-50 fixed z-50 w-full">
       <Logo />
       <Tooltip
         placement="left-start"
         className="capitalize mt-2"
-        content={`User : ${getUsername()}`}
+        content={`User : ${username}`}
       >
         <Avatar
-          name={getUsername().charAt(0).toUpperCase()}
+          name={username?.charAt(0).toUpperCase()}
           isBordered={true}
           className="hidden sm:block"
         />
@@ -25,13 +26,13 @@ const Navbar = () => {
         <Popover placement="bottom">
           <PopoverTrigger>
             <Avatar
-              name={getUsername().charAt(0).toUpperCase()}
+              name={username?.charAt(0).toUpperCase()}
               isBordered={true}
               size="sm"
             />
           </PopoverTrigger>
           <PopoverContent>
-            <p>User : {getUsername()}</p>
+            <p>User : {username}</p>
           </PopoverContent>
         </Popover>
 
