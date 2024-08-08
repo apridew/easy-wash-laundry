@@ -1,10 +1,10 @@
-import AddDataLayout from "../hoc/AddDataLayout";
+import AddDataLayout from "../../hoc/AddDataLayout";
 import { Input, Select, SelectItem } from "@nextui-org/react";
 import { useEffect, useState } from "react";
-import { getCustomers } from "../redux/actions/customerAction";
+import { getCustomers } from "../../redux/actions/customerAction";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../redux/actions/productAction";
-import { addNewTransaction } from "../redux/actions/transactionAction";
+import { getProducts } from "../../redux/actions/productAction";
+import { addNewTransaction } from "../../redux/actions/transactionAction";
 import { useNavigate } from "react-router-dom";
 
 const AddTransaction = () => {

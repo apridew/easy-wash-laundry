@@ -8,8 +8,8 @@ import { getProducts } from "../redux/actions/productAction";
 import { getCustomers } from "../redux/actions/customerAction";
 import { getTransactions } from "../redux/actions/transactionAction";
 import logoImage from "../assets/logo.svg";
-import SummaryDashboard from "../components/SummaryDashboard";
-import LoadingSpinner from "../components/LoadingSpinner";
+import SummaryDashboard from "../components/dashboard/SummaryDashboard";
+import LoadingSpinner from "../components/general/LoadingSpinner";
 import { TYPES } from "../redux/type";
 
 const DashboardPage = () => {

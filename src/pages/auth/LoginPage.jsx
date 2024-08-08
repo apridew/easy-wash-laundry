@@ -1,10 +1,10 @@
 import { Button, Image, Input } from "@nextui-org/react";
-import { postApi } from "../lib/axios";
+import { postApi } from "../../lib/axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-const SignInPage = () => {
+const LoginPage = () => {
   const navigate = useNavigate();
   const [validated, setValidated] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -60,9 +60,7 @@ const SignInPage = () => {
           className="flex flex-col w-full gap-6 justify-center md:max-w-xl p-10 lg:p-20 "
           onSubmit={handleSubmit}
         >
-          <p
-            className="text-xl md:text-2xl font-semibold tracking-wider uppercase"
-          >
+          <p className="text-xl md:text-2xl font-semibold tracking-wider uppercase">
             Login
           </p>
           <Input
@@ -114,4 +112,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default LoginPage;

@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContentLayout } from "../hoc/ContentLayout";
+import { ContentLayout } from "../../hoc/ContentLayout";
 import { useDispatch, useSelector } from "react-redux";
-import { formatDate, formatToRupiah } from "../lib/helpers";
-import { getTransactions } from "../redux/actions/transactionAction";
-import CardLayout from "../hoc/CardLayout";
-import CardHeaderTemplate from "../components/CardHeaderTemplate";
-import CardTitleTemplate from "../components/CardTitleTemplate";
-import CardContentTemplate from "../components/CardContentTemplate";
-import LoadingSpinner from "../components/LoadingSpinner";
-import { TYPES } from "../redux/type";
+import { formatDate, formatToRupiah } from "../../lib/helpers";
+import { getTransactions } from "../../redux/actions/transactionAction";
+import CardLayout from "../../hoc/CardLayout";
+import CardHeaderTemplate from "../../components/CardHeaderTemplate";
+import CardTitleTemplate from "../../components/CardTitleTemplate";
+import CardContentTemplate from "../../components/CardContentTemplate";
+import LoadingSpinner from "../../components/general/LoadingSpinner";
+import { TYPES } from "../../redux/type";
 
 const TransactionPage = () => {
   const dispatch = useDispatch();

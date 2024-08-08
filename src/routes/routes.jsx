@@ -1,16 +1,16 @@
 import DashboardPage from "../pages/DashboardPage";
-import SignInPage from "../pages/SignInPage";
-import ProductPage from "../pages/ProductPage";
-import CustomerPage from "../pages/CustomerPage";
-import TransactionPage from "../pages/TransactionPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import AuthRoute from "../hoc/AuthRoute";
-import DetailProductPage from "../pages/DetailProductPage";
-import DetailCustomerPage from "../pages/DetailCustomerPage";
-import DetailTransactionPage from "../pages/DetailTransactionPage";
-import EditProduct from "../pages/EditProduct";
-import EditCustomer from "../pages/EditCustomer";
 import ProtectedRoute from "../hoc/ProtectedRoute";
+import ProductPage from "../pages/product/ProductPage";
+import DetailProductPage from "../pages/product/DetailProductPage";
+import CustomerPage from "../pages/customer/CustomerPage";
+import DetailCustomerPage from "../pages/customer/DetailCustomerPage";
+import TransactionPage from "../pages/transaction/TransactionPage";
+import DetailTransactionPage from "../pages/transaction/DetailTransactionPage";
+import EditProduct from "../pages/product/EditProduct";
+import EditCustomer from "../pages/customer/EditCustomer";
+import LoginPage from "../pages/auth/LoginPage";
 
 const protectedRoutehelpers = (path, elementPage) => {
   return {
@@ -40,7 +40,7 @@ export const routes = [
     path: "/login",
     element: (
       <AuthRoute>
-        <SignInPage />
+        <LoginPage />
       </AuthRoute>
     ),
   },

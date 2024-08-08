@@ -1,7 +1,7 @@
-import AddDataLayout from "../hoc/AddDataLayout";
+import AddDataLayout from "../../hoc/AddDataLayout";
 import { Input } from "@nextui-org/react";
 import { useState } from "react";
-import { addNewProduct } from "../redux/actions/productAction";
+import { addNewProduct } from "../../redux/actions/productAction";
 import { useDispatch } from "react-redux";
 
 const AddProduct = () => {

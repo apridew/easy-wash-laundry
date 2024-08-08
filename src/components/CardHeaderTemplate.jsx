@@ -1,5 +1,5 @@
 import { CardHeader, Divider } from "@nextui-org/react";
-import ButtonAdd from "./ButtonAdd";
+import ButtonAdd from "./button/ButtonAdd";
 import PropTypes from "prop-types";
 
 const CardHeaderTemplate = ({ title, showAddButton }) => {

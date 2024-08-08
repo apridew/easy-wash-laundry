@@ -1,14 +1,14 @@
 import { useEffect } from "react";
-import { ContentLayout } from "../hoc/ContentLayout";
+import { ContentLayout } from "../../hoc/ContentLayout";
 import { useDispatch, useSelector } from "react-redux";
-import { getCustomers } from "../redux/actions/customerAction";
-import CardLayout from "../hoc/CardLayout";
-import CardHeaderTemplate from "../components/CardHeaderTemplate";
-import CardTitleTemplate from "../components/CardTitleTemplate";
-import CardContentTemplate from "../components/CardContentTemplate";
+import { getCustomers } from "../../redux/actions/customerAction";
+import CardLayout from "../../hoc/CardLayout";
+import CardHeaderTemplate from "../../components/CardHeaderTemplate";
+import CardTitleTemplate from "../../components/CardTitleTemplate";
+import CardContentTemplate from "../../components/CardContentTemplate";
 import { useNavigate } from "react-router-dom";
-import LoadingSpinner from "../components/LoadingSpinner";
-import { TYPES } from "../redux/type";
+import LoadingSpinner from "../../components/general/LoadingSpinner";
+import { TYPES } from "../../redux/type";
 
 const CustomerPage = () => {
   const dispatch = useDispatch();

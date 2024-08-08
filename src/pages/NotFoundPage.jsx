@@ -1,5 +1,5 @@
 import { Image } from "@nextui-org/react";
-import Footer from "../components/Footer";
+import Footer from "../components/general/Footer";
 
 const NotFoundPage = () => {
   return (

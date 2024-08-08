@@ -1,16 +1,19 @@
 import { Input } from "@nextui-org/react";
-import { ContentLayout } from "../hoc/ContentLayout";
+import { ContentLayout } from "../../hoc/ContentLayout";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import CardHeaderTemplate from "../components/CardHeaderTemplate";
-import CardLayout from "../hoc/CardLayout";
-import GroupButtonSubmit from "../components/GroupButtonSubmit";
+import CardHeaderTemplate from "../../components/CardHeaderTemplate";
+import CardLayout from "../../hoc/CardLayout";
+import GroupButtonSubmit from "../../components/button/GroupButtonSubmit";
 import { useEffect, useState } from "react";
-import { editProduct, getDetailProduct } from "../redux/actions/productAction";
-import LoadingSpinner from "../components/LoadingSpinner";
-import { TYPES } from "../redux/type";
+import {
+  editCustomer,
+  getDetailCustomer,
+} from "../../redux/actions/customerAction";
+import LoadingSpinner from "../../components/general/LoadingSpinner";
+import { TYPES } from "../../redux/type";
 
-const EditProduct = () => {
+const EditCustomer = () => {
   const { isLoading } = useSelector((store) => store.products);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,24 +21,19 @@ const EditProduct = () => {
 
   const [form, setForm] = useState({
     name: "",
-    price: 0,
-    type: "",
+    phoneNumber: 0,
+    address: "",
   });
 
   useEffect(() => {
     dispatch({ type: TYPES.SET_ISLOADING, payload: true });
-    const fetchDetailProduct = async () => {
-      const fetch = await getDetailProduct(param.id, dispatch, navigate);
+    const fetchDetailCustomer = async () => {
+      const fetch = await getDetailCustomer(param.id, dispatch, navigate);
       setForm(fetch);
       dispatch({ type: TYPES.SET_ISLOADING, payload: false });
     };
-    fetchDetailProduct();
+    fetchDetailCustomer();
   }, [dispatch, navigate, param.id]);
-
-  const formattedForm = {
-    ...form,
-    price: Number(form.price),
-  };
 
   const handleForm = (e) => {
     setForm({
@@ -45,16 +43,18 @@ const EditProduct = () => {
   };
 
   const handleSubmit = () => {
-    editProduct(formattedForm, dispatch, navigate);
+    editCustomer(form, dispatch, navigate);
   };
 
-  const validatePrice = form.price === "" || isNaN(form.price);
-  const isDisabled = form.name === "" || validatePrice || form.type === "";
+  const validatePhoneNumber =
+    form.phoneNumber === "" || isNaN(form.phoneNumber);
+  const isDisabled =
+    form.name === "" || validatePhoneNumber || form.address === "";
 
   return (
-    <ContentLayout id={"edit-product"}>
+    <ContentLayout id={"edit-customer"}>
       <CardLayout>
-        <CardHeaderTemplate title={"Edit Product"} />
+        <CardHeaderTemplate title={"Edit Customer"} />
         {isLoading ? (
           <LoadingSpinner />
         ) : (
@@ -62,33 +62,28 @@ const EditProduct = () => {
             <Input
               name="name"
               label="Name"
-              type="text"
+              address="text"
               radius="none"
               onChange={handleForm}
               className="mb-2"
               value={form.name}
             />
             <Input
-              name="price"
-              label="Price"
-              isInvalid={validatePrice}
+              name="phoneNumber"
+              label="Phone Number"
+              isInvalid={validatePhoneNumber}
               errorMessage="Please enter only number"
               radius="none"
               onChange={handleForm}
-              value={form.price}
-              startContent={
-                <div className="pointer-events-none">
-                  <span className="text-slate-500 text-sm">Rp</span>
-                </div>
-              }
+              value={form.phoneNumber}
             />
             <Input
-              name="type"
-              label="Type"
-              type="text"
+              name="address"
+              label="Address"
+              address="text"
               radius="none"
               onChange={handleForm}
-              value={form.type}
+              value={form.address}
             />
           </div>
         )}
@@ -105,4 +100,4 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+export default EditCustomer;

@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import GroupButtonSubmit from "../components/GroupButtonSubmit";
+import GroupButtonSubmit from "../components/button/GroupButtonSubmit";
 import PropTypes from "prop-types";
 
 const AddDataLayout = ({ children, handleSubmit, isDisabled }) => {

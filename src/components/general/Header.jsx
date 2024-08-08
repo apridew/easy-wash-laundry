@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import DeleteConfirmation from "./DeleteConfirmation";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import AddProduct from "./AddProduct";
-import AddCustomer from "./AddCustomer";
-import AddTransaction from "./AddTransaction";
+import AddProduct from "../addModal/AddProduct";
+import AddCustomer from "../addModal/AddCustomer";
+import AddTransaction from "../addModal/AddTransaction";
 
 const Header = () => {
   const { isDeleteProduct, isAddProduct } = useSelector(

@@ -1,4 +1,4 @@
-import { itemSidebar } from "../lib/helpers";
+import { itemSidebar } from "../../lib/helpers";
 import NavLinkItem from "./NavLinkItem";
 
 const Sidebar = () => {

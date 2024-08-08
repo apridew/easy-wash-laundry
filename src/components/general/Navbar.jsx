@@ -2,7 +2,7 @@ import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { Avatar, Tooltip } from "@nextui-org/react";
 import { Popover, PopoverTrigger, PopoverContent } from "@nextui-org/react";
-import { getUsername } from "../lib/helpers";
+import { getUsername } from "../../lib/helpers";
 
 const Navbar = () => {
   return (

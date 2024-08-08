@@ -1,9 +1,12 @@
 import { Button } from "@nextui-org/react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProduct, getProducts } from "../redux/actions/productAction";
+import { deleteProduct, getProducts } from "../../redux/actions/productAction";
 import { useLocation, useNavigate } from "react-router-dom";
-import { deleteCustomer, getCustomers } from "../redux/actions/customerAction";
-import { TYPES } from "../redux/type";
+import {
+  deleteCustomer,
+  getCustomers,
+} from "../../redux/actions/customerAction";
+import { TYPES } from "../../redux/type";
 
 const DeleteConfirmation = () => {
   const { idProduct } = useSelector((store) => store.products);
@@ -43,11 +46,7 @@ const DeleteConfirmation = () => {
           <i className="bi bi-exclamation-circle text-5xl text-amber-400"></i>
           <p>Are you sure want to delete?</p>
           <div className=" space-x-6">
-            <Button
-              onClick={handleDelete}
-              variant="ghost"
-              color="danger"
-            >
+            <Button onClick={handleDelete} variant="ghost" color="danger">
               YES
             </Button>
             <Button

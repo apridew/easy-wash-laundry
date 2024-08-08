@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import { ContentLayout } from "../hoc/ContentLayout";
+import { ContentLayout } from "../../hoc/ContentLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { getDetailTransaction } from "../redux/actions/transactionAction";
-import { formatDate, formatToRupiah } from "../lib/helpers";
-import ButtonBack from "../components/ButtonBack";
-import CardLayout from "../hoc/CardLayout";
-import CardHeaderTemplate from "../components/CardHeaderTemplate";
-import CardDetailTemplate from "../components/CardDetailTemplate";
-import CardDetailTitle from "../components/CardDetailTitle";
-import LoadingSpinner from "../components/LoadingSpinner";
+import { getDetailTransaction } from "../../redux/actions/transactionAction";
+import { formatDate, formatToRupiah } from "../../lib/helpers";
+import ButtonBack from "../../components/button/ButtonBack";
+import CardLayout from "../../hoc/CardLayout";
+import CardHeaderTemplate from "../../components/CardHeaderTemplate";
+import CardDetailTemplate from "../../components/CardDetailTemplate";
+import CardDetailTitle from "../../components/CardDetailTitle";
+import LoadingSpinner from "../../components/general/LoadingSpinner";
 
 const DetailTransactionPage = () => {
   const param = useParams();

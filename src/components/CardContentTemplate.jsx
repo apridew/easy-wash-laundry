@@ -1,6 +1,6 @@
 import { CardBody, Chip, Tooltip } from "@nextui-org/react";
 import { sliceId } from "../lib/helpers";
-import GroupButtonAction from "./GroupButtonAction";
+import GroupButtonAction from "./button/GroupButtonAction";
 import PropTypes from "prop-types";
 const CardContentTemplate = ({
   id,

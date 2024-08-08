@@ -1,15 +1,15 @@
 import { useEffect } from "react";
-import { ContentLayout } from "../hoc/ContentLayout";
+import { ContentLayout } from "../../hoc/ContentLayout";
 import { useDispatch, useSelector } from "react-redux";
-import CardLayout from "../hoc/CardLayout";
-import CardHeaderTemplate from "../components/CardHeaderTemplate";
-import CardTitleTemplate from "../components/CardTitleTemplate";
-import CardContentTemplate from "../components/CardContentTemplate";
+import CardLayout from "../../hoc/CardLayout";
+import CardHeaderTemplate from "../../components/CardHeaderTemplate";
+import CardTitleTemplate from "../../components/CardTitleTemplate";
+import CardContentTemplate from "../../components/CardContentTemplate";
 import { useNavigate } from "react-router-dom";
-import { getProducts } from "../redux/actions/productAction";
-import { getUsername } from "../lib/helpers";
-import LoadingSpinner from "../components/LoadingSpinner";
-import { TYPES } from "../redux/type";
+import { getProducts } from "../../redux/actions/productAction";
+import { getUsername } from "../../lib/helpers";
+import LoadingSpinner from "../../components/general/LoadingSpinner";
+import { TYPES } from "../../redux/type";
 
 const ProductPage = () => {
   const dispatch = useDispatch();

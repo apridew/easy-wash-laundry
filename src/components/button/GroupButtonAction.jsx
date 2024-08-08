@@ -1,7 +1,7 @@
 import ButtonAction from "./ButtonAction";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { TYPES } from "../redux/type";
+import { TYPES } from "../../redux/type";
 import PropTypes from "prop-types";
 
 const GroupButtonAction = ({
